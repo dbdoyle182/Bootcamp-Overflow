@@ -30,7 +30,7 @@ app.set('view engine', 'handlebars');
 
 // When there are controllers in place call them here
 
-app.use(routes);
+// app.use(routes);
 
 
 db.sequelize.sync({ force: true }).then(function() {
