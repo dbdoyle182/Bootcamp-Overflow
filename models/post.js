@@ -5,7 +5,14 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT
   }, {});
   Post.associate = function(models) {
-    // associations can be defined here
+    Post.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Post.hasMany(models.Comment, {
+      onDelete: 'cascade'
+    });
   };
   return Post;
 };
