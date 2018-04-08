@@ -28,13 +28,11 @@ app.set('view engine', 'handlebars');
 
 // Import router
 
-app.get('/', function(req, res) {
+var htmlroutes = require('./controllers/htmlController.js');
+var apiroutes = require('./controllers/apiController.js')
 
-    res.render('index');
-})
-// When there are controllers in place call them here
-
-// app.use(routes);
+app.use(htmlroutes);
+app.use(apiroutes);
 
 
 db.sequelize.sync({ force: true }).then(function() {
