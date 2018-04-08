@@ -1,8 +1,27 @@
-module.exports = function(sequelize, DataTypes) {
-    var Comment = sequelize.define('Comment', {
-        content: {
-            type: DataTypes.TEXT,
-        }
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  var Comment = sequelize.define('Comment', {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
+    },
+    content: DataTypes.TEXT
+  }, {
+    freezeTableName: true
+  });
+  Comment.associate = function(models) {
+    Comment.belongsTo(models.Post, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-    return Comment
-}
+    Comment.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
+  };
+  return Comment;
+};
