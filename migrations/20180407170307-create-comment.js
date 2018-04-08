@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Comments', {
+    return queryInterface.createTable('Comment', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -9,7 +9,7 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4
       },
       content: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -18,10 +18,28 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      PostId: {
+        type: Sequelize.UUID,
+        references: {
+            model: 'post',
+            key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
+      },
+      UserId: {
+        type: Sequelize.UUID,
+        references: {
+            model: 'user',
+            key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Comments');
+    return queryInterface.dropTable('Comment');
   }
 };

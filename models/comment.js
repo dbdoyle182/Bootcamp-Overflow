@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4
     },
     content: DataTypes.TEXT
-  }, {});
+  }, {
+    freezeTableName: true
+  });
   Comment.associate = function(models) {
     Comment.belongsTo(models.Post, {
       foreignKey: {

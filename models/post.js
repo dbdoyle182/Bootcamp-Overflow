@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     content: DataTypes.TEXT
-  }, {});
+  }, {
+    freezeTableName: true
+  });
   Post.associate = function(models) {
     Post.belongsTo(models.User, {
       foreignKey: {

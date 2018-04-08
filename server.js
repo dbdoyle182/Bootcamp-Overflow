@@ -28,6 +28,10 @@ app.set('view engine', 'handlebars');
 
 // Import router
 
+app.get('/', function(req, res) {
+
+    res.render('index');
+})
 // When there are controllers in place call them here
 
 // app.use(routes);
