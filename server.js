@@ -3,6 +3,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+// Authentication packages
+var session = require('express-session');
+var passport = require('passport');
+
 // Sets up the express app
 var PORT = process.env.PORT || 8080;
 var app = express();
@@ -18,6 +22,32 @@ app.use(bodyParser.json());
 // Sets up the static directory
 
 app.use(express.static('public'));
+
+//Authentication
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+  }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  var db = require('./models');
+  db.User.findById(id).then(function(user) {
+    if (user) {
+      done(null, user.get());
+    } else {
+      done(user.errors, null);
+    }
+  });
+
+});
 
 // Set up Handlebars
 
@@ -36,8 +66,10 @@ app.use(htmlRoutes);
 app.use(apiUserRoutes)
 app.use(apiPostRoutes);
 
+require('./config/passport/passport.js')(passport);
 
-db.sequelize.sync({ force: true }).then(function() {
+
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });
