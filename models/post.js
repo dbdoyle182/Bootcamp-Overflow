@@ -15,8 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
-    content: DataTypes.TEXT
-  }, {
+    content: DataTypes.TEXT,
+    posttype: DataTypes.STRING
+    },{
     freezeTableName: true
   });
   Post.associate = function(models) {
