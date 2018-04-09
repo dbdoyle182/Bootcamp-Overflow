@@ -5,8 +5,10 @@ var db = require('../models')
 
 
 router.get('/', function(req, res) {
-    console.log(req.user);
-    console.log(req.isAuthenticated());
+    if (req.user) {
+        console.log(req.user.id);
+    }
+        console.log(req.isAuthenticated());
 
     res.render('home')
 });
@@ -17,16 +19,30 @@ router.get('/login', function(req, res) {
     res.render('login')
 });
 
-router.get('/post', function(req, res) {
-
-
-    res.render('post')
+router.get('/postview/:id', function(req, res) {
+    db.Post.findOne(
+        {
+            where: {
+                id: req.params.id
+            },
+            include: [db.User]
+        }
+    ).then(function(results) {
+        res.render('postview', {
+            postinfo: results
+        })
+    });
 });
 
 router.get('/postlist', function(req, res) {
+    db.Post.findAll(
+        {
+            include: [db.User]
+        }
+    ).then(function(results) {
 
-
-    res.render('postlist')
+        res.render('postlist', { post: results })
+    });
 });
 
 router.get('/signup', function(req, res) {
@@ -41,5 +57,9 @@ router.get('/user', function(req, res) {
         res.render('user', { user: data })
     })
 });
+
+router.get('/post', function(req, res) {
+    res.render('post')
+})
 
 module.exports = router

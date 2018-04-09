@@ -6,7 +6,7 @@ var db = require('../models');
 
 router.get('/api/posts', function(req, res) {
     db.Post.findAll({
-
+        include: [db.User]
     }).then(function(result) {
         res.json(result);
         console.log('working')
@@ -14,8 +14,15 @@ router.get('/api/posts', function(req, res) {
 });
 
 router.post('/api/posts', function(req, res) {
-    db.Post.create(req.body).then(function(results) {
-        res.json(result)
+    db.Post.create(
+        {
+            UserId: req.user.id,
+            title: req.body.title,
+            content: req.body.content,
+            posttype: req.body.posttype
+        
+    }).then(function(results) {
+        res.redirect('/postlist')
     })
 })
 

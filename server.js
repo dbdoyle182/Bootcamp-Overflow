@@ -69,7 +69,7 @@ app.use(apiPostRoutes);
 require('./config/passport/passport.js')(passport);
 
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });
