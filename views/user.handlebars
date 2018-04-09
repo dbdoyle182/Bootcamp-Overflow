@@ -1,10 +1,104 @@
-this is the individuals user page, potentially could show all their posts and comments made
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+  <body>
 
-<ul>
-    {{#each user}}
-    <li>
-        <p>Username: {{this.username}}</p>
-        <p>Password: {{this.password}}</p>
-    </li>
-    {{/each}}
-</ul>
+      <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+          </a>
+        
+          <div class="navbar-item has-dropdown">
+            <a class="navbar-link">
+              Menu
+            </a>
+        
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Home
+              </a>
+              <a class="navbar-item">
+                Post
+              </a>
+              <a class="navbar-item">
+                Profile
+              </a>
+              <hr class="navbar-divider">
+              <div class="navbar-item">
+                Logout
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <section class="hero is-primary">
+          <div class="hero-body">
+            <p class="title">
+              User Profile
+            </p>
+            <p class="subtitle">
+              Handlebars link to username from table database
+            </p>
+          </div>
+        </section>
+<br>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Avatar and rank?<p>
+                <p class="subtitle"></p>
+                <figure class="image is-128x128">
+                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                      </figure>
+                
+                <!-- 
+                <figure class="image is-150by150">
+                        <img src="http://placehold.it/150" width="150" height="150">
+                      </figure>
+                    -->
+              </article>
+              <article class="tile is-child notification is-warning">
+                <p class="title">Programming experience/education, currently looking for job?</p>
+                <p class="subtitle">Bottom tile</p>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-info">
+                <p class="title">Bio</p>
+                <p class="subtitle">What do you want to share about you?</p>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-danger">
+              <p class="title">Areas of proficiency</p>
+              <p class="subtitle">What do you need work on, what can you offer help on?</p>
+              <div class="content">
+                <!-- Content handlebars -->
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-success">
+            <div class="content">
+              <p class="title">Most recent posts</p>
+              <p class="subtitle">Insert creative subtitle</p>
+              <div class="content">
+                <!-- Content -->
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+  </body>
+</html>
