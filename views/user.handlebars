@@ -1,1 +1,10 @@
 this is the individuals user page, potentially could show all their posts and comments made
+
+<ul>
+    {{#each user}}
+    <li>
+        <p>Username: {{this.username}}</p>
+        <p>Password: {{this.password}}</p>
+    </li>
+    {{/each}}
+</ul>

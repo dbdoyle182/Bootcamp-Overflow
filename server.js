@@ -28,14 +28,16 @@ app.set('view engine', 'handlebars');
 
 // Import router
 
-var htmlroutes = require('./controllers/htmlController.js');
-var apiroutes = require('./controllers/apiController.js')
+var htmlRoutes = require('./controllers/htmlController.js');
+var apiPostRoutes = require('./controllers/apiControllerPosts.js');
+var apiUserRoutes = require('./controllers/apiControllerUsers.js');
 
-app.use(htmlroutes);
-app.use(apiroutes);
+app.use(htmlRoutes);
+app.use(apiUserRoutes)
+app.use(apiPostRoutes);
 
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });
