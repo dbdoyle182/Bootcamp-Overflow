@@ -5,7 +5,8 @@ var db = require('../models')
 
 
 router.get('/', function(req, res) {
-    
+    console.log(req.user);
+    console.log(req.isAuthenticated());
 
     res.render('home')
 });
