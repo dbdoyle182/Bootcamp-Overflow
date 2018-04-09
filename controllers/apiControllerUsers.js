@@ -26,7 +26,7 @@ var db = require('../models');
             check('email').isEmail().withMessage('Must be a valid email').trim().normalizeEmail();
 
             check('password', 'Password must be at least 7 characters in length').isLength({ min: 7}).matches(/\d/)
-            res.json(results);
+            res.redirect('/login')
             console.log('success')
         })
     })
