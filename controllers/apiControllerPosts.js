@@ -15,7 +15,7 @@ router.get('/api/posts', function(req, res) {
 
 router.post('/api/posts', function(req, res) {
     db.Post.create(req.body).then(function(results) {
-        res.json(result)
+        res.redirect('/post')
     })
 })
 
