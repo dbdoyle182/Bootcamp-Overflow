@@ -8,52 +8,54 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
   <body>
-
-    <div class="field">
-        <label class="label">First Name</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="e.g Alex">
+    <form action="/api/users" method="POST">
+        <div class="field">
+            <label class="label">First Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex" name='first'>
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Last Name</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="e.g Smith">
+        <div class="field">
+            <label class="label">Last Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Smith" name='last'>
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Desired User Name</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="e.g Alex">
+        <div class="field">
+            <label class="label">Desired User Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex" name='username'>
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-            <input class="input" type="password" placeholder="Password">
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+                <input class="input" type="password" placeholder="Password">
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Confirm Password</label>
-        <div class="control">
-            <input class="input" type="password" placeholder="Confirm Password">
+        <div class="field">
+            <label class="label">Confirm Password</label>
+            <div class="control">
+                <input class="input" type="password" placeholder="Confirm Password" name='password'>
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-            <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name='email'>
+            </div>
         </div>
-    </div>
-    
-    <div>
-        <a class="button">Submit</a>
-    </div>
-    
+
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
   </body>
 </html>
