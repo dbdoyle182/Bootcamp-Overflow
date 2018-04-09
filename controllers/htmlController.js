@@ -1,9 +1,11 @@
 var express = require('express');
 
 var router = express.Router();
+var db = require('../models')
+
 
 router.get('/', function(req, res) {
-
+    
 
     res.render('home')
 });
@@ -33,9 +35,10 @@ router.get('/signup', function(req, res) {
 });
 
 router.get('/user', function(req, res) {
-
-
-    res.render('user')
+    db.User.findAll({}).then(function(data) {
+        
+        res.render('user', { user: data })
+    })
 });
 
 module.exports = router
