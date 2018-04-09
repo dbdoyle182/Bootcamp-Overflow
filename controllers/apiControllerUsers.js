@@ -14,7 +14,15 @@ var db = require('../models');
     });
 
     router.post('/api/users', function(req, res) {
-        db.User.create(req.body).then(function(results) {
+        db.User.create(
+            {
+                email: req.body.email,
+                password: req.body.password,
+                username: req.body.username,
+                firstName: req.body.first,
+                lastName: req.body.last
+                
+        }).then(function(results) {
             check('email').isEmail().withMessage('Must be a valid email').trim().normalizeEmail();
 
             check('password', 'Password must be at least 7 characters in length').isLength({ min: 7}).matches(/\d/)
