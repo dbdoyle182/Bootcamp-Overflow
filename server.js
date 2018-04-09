@@ -33,6 +33,22 @@ app.use(session({
   app.use(passport.initialize());
   app.use(passport.session());
 
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  var db = require('./models');
+  db.User.findById(id).then(function(user) {
+    if (user) {
+      done(null, user.get());
+    } else {
+      done(user.errors, null);
+    }
+  });
+
+});
+
 // Set up Handlebars
 
 var exphbs = require('express-handlebars');
@@ -53,7 +69,7 @@ app.use(apiPostRoutes);
 require('./config/passport/passport.js')(passport);
 
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });
