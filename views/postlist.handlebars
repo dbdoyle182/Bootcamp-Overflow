@@ -1,1 +1,9 @@
-this is the page that holds the list of posts to select
+<ul>
+    {{#each post}}
+        <li>
+            <a href="/postview/{{this.id}}")>{{this.title}}</a>
+            <p>{{this.posttype}}</p>
+            <p>Author: {{this.User.username}}</p>
+        </li>
+    {{/each}}
+</ul>
