@@ -41,6 +41,31 @@ module.exports = (sequelize, DataTypes) => {
     lastName: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    userImage: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'http://via.placeholder.com/128x128'
+    },
+    career: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: 'Where are you located and what kind of work are you look for?'
+    },
+    resume: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: 'What is your experience/education?'
+    },
+    desiredLearning: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: 'What languages and technologies are you interested in?'
+    },
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      defaultValue: 'Tell us about yourself'
     }
   }, {
     freezeTableName: true
