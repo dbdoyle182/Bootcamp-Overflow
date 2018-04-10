@@ -16,12 +16,18 @@
 <form action="/api/comments" method="POST">
     <div class="field">Commenting as: {{user.username}}</div>
     <div class="field">
+        <label class='label'for="comment-title">What's the comment title?</label>
+        <div class="control">
+            <input type="text" name="title">
+        </div>
+    </div>
+    <div class="field">
         <label class="label" for='comment'>What's your comment?</label>
         <div class="control">
             <textarea name="content" id="comment" cols="30" rows="10" placeholder="Place your comment here"></textarea>
         </div>
     </div>
-    <div class="field">
+    <div class="field" style="display:none">
         <label class="label">Post Id</label>
         <div class="control">
             <div class="select">

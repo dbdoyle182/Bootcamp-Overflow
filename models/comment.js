@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV4
     },
     content: DataTypes.TEXT,
-    createdBy: DataTypes.STRING
+    title: DataTypes.STRING,
   }, {
     freezeTableName: true
   });

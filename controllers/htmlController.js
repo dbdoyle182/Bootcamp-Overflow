@@ -58,13 +58,11 @@ if(req.user) {
         where: {
             id: req.user.id
         },
-        include: {
-            model: db.Post
-        }
+        include: [{all:true}]
     }).then(function(data) {
         console.log(data.userImage);
         
-        res.render('user', { user: data, post: data.Posts })
+        res.render('user', { user: data, post: data.Posts, comment: data.Comments })
     })
 }
 });
