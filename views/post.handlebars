@@ -3,7 +3,7 @@
 
 {{!-- this section to display the logged in username. Need to figure out how to pull from the db--}}
 <div class="field">
-  <label class="label">Username</label>
+  <label class="label">Posting as {{user.username}}</label>
 </div>
 
 
@@ -36,10 +36,10 @@
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link">Submit</button>
+    <button class="button is-link" type="submit">Submit</button>
   </div>
   <div class="control">
-    <button class="button is-text">Cancel</button>
+    <button class="button is-text" type="reset">Cancel</button>
   </div>
 </div>
 

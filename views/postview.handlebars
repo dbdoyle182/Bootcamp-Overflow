@@ -2,3 +2,43 @@
 <h4>Author: {{postinfo.User.username}}</h4>
 <h4>Post Type: {{postinfo.posttype}}</h4>
 <p>{{postinfo.content}}</p>
+
+<h1>COMMENTS</h1>
+<ul>
+    {{#each postinfo.Comments}}
+        <li>
+            <p>User: {{this.createdBy}}</p>
+            <p>{{this.content}}</p>
+        </li>
+    {{/each}}
+</ul>
+{{#if user}}
+<form action="/api/comments" method="POST">
+    <div class="field">Commenting as: {{user.username}}</div>
+    <div class="field">
+        <label class="label" for='comment'>What's your comment?</label>
+        <div class="control">
+            <textarea name="content" id="comment" cols="30" rows="10" placeholder="Place your comment here"></textarea>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Post Id</label>
+        <div class="control">
+            <div class="select">
+                <select name="postid">
+                    <option>{{postinfo.id}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+{{else}}
+<div>
+    <p>Log in to comment on this post!</p>
+</div>
+{{/if}}

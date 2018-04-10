@@ -61,15 +61,17 @@ app.set('view engine', 'handlebars');
 var htmlRoutes = require('./controllers/htmlController.js');
 var apiPostRoutes = require('./controllers/apiControllerPosts.js');
 var apiUserRoutes = require('./controllers/apiControllerUsers.js');
+var apiCommentRoutes = require('./controllers/apiControllerComments.js')
 
 app.use(htmlRoutes);
 app.use(apiUserRoutes)
 app.use(apiPostRoutes);
+app.use(apiCommentRoutes);
 
 require('./config/passport/passport.js')(passport);
 
 
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({ force:true }).then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });

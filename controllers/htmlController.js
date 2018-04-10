@@ -25,11 +25,12 @@ router.get('/postview/:id', function(req, res) {
             where: {
                 id: req.params.id
             },
-            include: [db.User]
+            include: [{all:true}]
         }
     ).then(function(results) {
         res.render('postview', {
-            postinfo: results
+            postinfo: results,
+            user: req.user
         })
     });
 });
@@ -69,7 +70,7 @@ if(req.user) {
 });
 
 router.get('/post', function(req, res) {
-    res.render('post')
+    res.render('post', {user: req.user})
 })
 
 module.exports = router
