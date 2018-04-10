@@ -8,9 +8,9 @@ router.get('/', function(req, res) {
     if (req.user) {
         console.log(req.user);
     }
-        console.log(req.isAuthenticated());
+        //console.log(isLoggedIn);
 
-    res.render('home')
+    res.render('home', {isLoggedIn: true})
 });
 
 router.get('/login', function(req, res) {

@@ -1,7 +1,7 @@
 
-  <!-- Hero head: will stick at the top -->
   <div class="hero-head">
-    <nav class="navbar">
+    
+     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item">
@@ -19,12 +19,20 @@
             <a class="navbar-item" href='/postlist'>
               Posts
             </a>
-            <a class="navbar-item" href="/login">
-              Login
-            </a>
-            <a class="navbar-item" href="/signup">
-              Register
-            </a>
+            {{#if isLoggedIn}}
+              <a class="navbar-item" href="/logout">
+                Logout
+              </a>
+            {{else}}
+              <a class="navbar-item" href="/login">
+                Login
+              </a>
+              <a class="navbar-item" href="/signup">
+                Register
+              </a>
+            {{/if}}
+            
+            
             <span class="navbar-item">
               <a class="button is-primary is-inverted">
                 <span class="icon">
@@ -36,5 +44,5 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> 
   </div>
