@@ -49,6 +49,11 @@ passport.deserializeUser(function(id, done) {
 
 });
 
+app.use(function(req, res, next) {
+  res.locals.isLoggedIn = req.isAuthenticated();
+  next();
+});
+
 // Set up Handlebars
 
 var exphbs = require('express-handlebars');
