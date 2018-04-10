@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  </head>
-  <body>
+
 
       <nav class="navbar" role="navigation" aria-label="dropdown navigation">
           <a class="navbar-item">
@@ -39,12 +30,17 @@
         
         <section class="hero is-primary">
           <div class="hero-body">
-            <p class="title">
-              User Profile
-            </p>
-            <p class="subtitle">
-              Handlebars link to username from table database
-            </p>
+            <span>
+              <p class="title">
+                Hello {{user.username}}!
+              </p>
+              <p class="subtitle">
+                Welcome to Bootcamp_Overflow! 
+              </p>
+            </span>
+            <span>
+              <button> Edit Page </button>
+            </span>
           </div>
         </section>
 <br>
@@ -54,34 +50,32 @@
           <div class="tile">
             <div class="tile is-parent is-vertical">
               <article class="tile is-child notification is-primary">
-                <p class="title">Avatar and rank?<p>
-                <p class="subtitle"></p>
+                {{!-- We would like to add a ranking mechanism at some point --}}
+                <p class="title">Avatar<p>
+                <p class="subtitle">{{user.firstName}} {{user.lastName}}</p>
                 <figure class="image is-128x128">
-                        <img src="https://bulma.io/images/placeholders/128x128.png">
-                      </figure>
-                
-                <!-- 
-                <figure class="image is-150by150">
-                        <img src="http://placehold.it/150" width="150" height="150">
-                      </figure>
-                    -->
+                  <img src='{{user.userImage}}'>
+                </figure>
+                <p class="subtitle"> Created on: {{user.createdAt}}</p>
               </article>
               <article class="tile is-child notification is-warning">
-                <p class="title">Programming experience/education, currently looking for job?</p>
-                <p class="subtitle">Bottom tile</p>
+                <p class="title">Career Aspirations</p>
+                <p class="subtitle">{{user.career}}</p>
+                <p class="title">Experience</p>
+                <p class="subtitle">{{user.resume}}</p>
               </article>
             </div>
             <div class="tile is-parent">
               <article class="tile is-child notification is-info">
                 <p class="title">Bio</p>
-                <p class="subtitle">What do you want to share about you?</p>
+                <p class="subtitle">{{user.bio}}</p>
               </article>
             </div>
           </div>
           <div class="tile is-parent">
             <article class="tile is-child notification is-danger">
               <p class="title">Areas of proficiency</p>
-              <p class="subtitle">What do you need work on, what can you offer help on?</p>
+              <p class="subtitle">{{user.desiredLearning}}</p>
               <div class="content">
                 <!-- Content handlebars -->
               </div>
@@ -94,11 +88,16 @@
               <p class="title">Most recent posts</p>
               <p class="subtitle">Insert creative subtitle</p>
               <div class="content">
-                <!-- Content -->
+                <ul>
+                {{#each post}}
+                  <li>
+                    <p>{{this.title}}</p>
+                  </li>
+                {{/each}}
+                </ul>
               </div>
             </div>
           </article>
         </div>
       </div>
-  </body>
-</html>
+

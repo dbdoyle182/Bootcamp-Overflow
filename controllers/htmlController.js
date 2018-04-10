@@ -6,7 +6,7 @@ var db = require('../models')
 
 router.get('/', function(req, res) {
     if (req.user) {
-        console.log(req.user.id);
+        console.log(req.user);
     }
         console.log(req.isAuthenticated());
 
@@ -52,10 +52,20 @@ router.get('/signup', function(req, res) {
 });
 
 router.get('/user', function(req, res) {
-    db.User.findAll({}).then(function(data) {
+if(req.user) {
+    db.User.findOne({
+        where: {
+            id: req.user.id
+        },
+        include: {
+            model: db.Post
+        }
+    }).then(function(data) {
+        console.log(data.userImage);
         
-        res.render('user', { user: data })
+        res.render('user', { user: data, post: data.Posts })
     })
+}
 });
 
 router.get('/post', function(req, res) {
