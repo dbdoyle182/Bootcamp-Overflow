@@ -27,7 +27,7 @@ router.post('/api/comments', function(req, res) {
         }
     ).then(function(results) {
     
-        res.redirect('/postlist');
+        res.redirect('/postview/' + req.body.postid + '/')
     });
 })
 

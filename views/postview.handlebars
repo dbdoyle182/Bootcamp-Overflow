@@ -1,43 +1,42 @@
 <div class="container">
     <article class="media">
-    <figure class="media-left">
-        <p class="image is-64x64">
-        <img src="{{postinfo.User.userImage}}">
-        </p>
-    </figure>
-    <div class="media-content">
-        <div class="content">
-        <p>
-            <strong>{{postinfo.User.username}}</strong>
-            <br>
-            {{postinfo.title}}
-            <br>
-            {{postinfo.content}}
-            <br>
-        </p>
-        </div>
-    {{#each postinfo.Comments}}
-        <article class="media">
         <figure class="media-left">
-            <p class="image is-48x48">
-            <img src="{{this.createdByImg}}">
+            <p class="image is-64x64">
+                <img src="{{postinfo.User.userImage}}">
             </p>
         </figure>
         <div class="media-content">
             <div class="content">
-            <p>
-                <strong>{{this.createdBy}}</strong>
-                <br>
-                {{this.content}}
-                <br>
-            </p>
+                <p>
+                    <strong>{{postinfo.User.username}}</strong>
+                    <br>
+                    {{postinfo.title}}
+                    <br>
+                    {{postinfo.content}}
+                    <br>
+                </p>
             </div>
+        
+            {{#each postinfo.Comments}}
+                <article class="media">
+                    <figure class="media-left">
+                        <p class="image is-48x48">
+                            <img src="{{this.createdByImg}}">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>{{this.createdBy}}</strong>
+                                <br>
+                                {{this.content}}
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {{/each}}
         </div>
-        </article>
-    {{/each}}
-        </div>
-    </div>
-
     </article>
     <article class="media">
     {{#if user}}
