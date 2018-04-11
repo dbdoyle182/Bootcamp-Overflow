@@ -75,6 +75,14 @@ app.use(apiUserRoutes)
 app.use(apiPostRoutes);
 app.use(apiCommentRoutes);
 
+app.use(function(req, res, next){
+  res.status(404);
+ 
+  res.render('404');
+  return;
+ 
+});
+
 require('./config/passport/passport.js')(passport);
 
 
