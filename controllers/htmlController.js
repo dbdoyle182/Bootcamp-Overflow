@@ -80,7 +80,7 @@ router.get('/update', function(req, res) {
 });
 
 router.get('/user/:username', function(req, res) {
-    if(req.user) {
+    
         db.User.findOne({
             where: {
                 username: req.params.username
@@ -88,9 +88,9 @@ router.get('/user/:username', function(req, res) {
             include: [{all:true}]
         }).then(function(results) {
             console.log(results)
-            res.render('user', {user: results, post: results.Posts, comment: results.Comments})
+            res.render('user', {user: results, post: results.Posts, comment: results.Comments, guest: req.user})
         });
-    }
+    
 })
 
 

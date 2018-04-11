@@ -27,7 +27,11 @@
                 Logout
               </a>
               <a class="navbar-item" href="/user">
-                {{ user.username}}'s page
+              {{#if guest}}
+                {{guest.username}}'s page
+              {{else}}
+                {{user.username}}'s page
+              {{/if}}
               </a>
 
             {{else}}
