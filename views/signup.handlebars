@@ -1,3 +1,4 @@
+
     {{> navbar }}
     <form action="/api/users" method="POST">
         <div class="field">
@@ -22,6 +23,51 @@
         </div>
 
         <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name='email'>
+            </div>
+        </div>
+
+
+        <div class="field">
+            <label class="label">Avatar</label>
+            <div class="control">
+                <input class="input" type="url" placeholder="Insert image URL" name='avatar'>
+            </div>
+        </div>
+
+
+        <div class="field">
+            <label class="label">Bio</label>
+            <div class="control">
+                <textarea name="bio" placeholder="Tell us about yourself."></textarea>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Career Aspirations</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Where are you located?  What are you looking for?" name='careeraspirations'>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Experience and Education</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Experience & Education" name='experience'>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Areas of Proficiency</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="What technologies are you most comfortable with?" name='proficiency'>
+            </div>
+        </div>
+
+
+        <div class="field">
             <label class="label">Password</label>
             <div class="control">
                 <input class="input" type="password" placeholder="Password">
@@ -35,12 +81,7 @@
             </div>
         </div>
 
-        <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name='email'>
-            </div>
-        </div>
+
 
 
         <div>
