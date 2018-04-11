@@ -49,8 +49,9 @@ passport.deserializeUser(function(id, done) {
 
 });
 
+
 app.use(function(req, res, next) {
-  res.locals.isLoggedIn = req.isAuthenticated();
+  app.locals.isLoggedIn = req.isAuthenticated();
   next();
 });
 
@@ -74,7 +75,7 @@ app.use(apiPostRoutes);
 require('./config/passport/passport.js')(passport);
 
 
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log('Server listening on: http://localhost:' + PORT)
     });
