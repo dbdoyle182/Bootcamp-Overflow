@@ -17,11 +17,13 @@ router.get('/postview/:id', function(req, res) {
             where: {
                 id: req.params.id
             },
-            include: [db.User]
+            include: [{all:true}]
         }
     ).then(function(results) {
+        console.log(results.User)
         res.render('postview', {
-            postinfo: results
+            postinfo: results,
+            user: req.user
         })
     });
 });
@@ -49,19 +51,17 @@ if(req.user) {
         where: {
             id: req.user.id
         },
-        include: {
-            model: db.Post
-        }
+        include: [{all:true}]
     }).then(function(data) {
         console.log(data.userImage);
         
-        res.render('user', { user: data, post: data.Posts })
+        res.render('user', { user: data, post: data.Posts, comment: data.Comments })
     })
 }
 });
 
 router.get('/post', function(req, res) {
-    res.render('post')
+    res.render('post', {user: req.user})
 })
 
 module.exports = router

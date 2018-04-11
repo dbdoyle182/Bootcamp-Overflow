@@ -6,7 +6,7 @@ var db = require('../models');
 
 router.get('/api/posts', function(req, res) {
     db.Post.findAll({
-        include: [db.User]
+        include: [{all:true}]
     }).then(function(result) {
         res.json(result);
         console.log('working')

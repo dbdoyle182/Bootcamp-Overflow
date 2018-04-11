@@ -7,6 +7,7 @@ var db = require('../models');
 
     router.get('/api/users', function(req, res) {
         db.User.findAll({
+            include: [{all:true}]
         }).then(function(results) {
             console.log('success')
 

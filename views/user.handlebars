@@ -1,6 +1,7 @@
 
 
       {{> navbar}}
+
         
         <section class="hero is-primary">
           <div class="hero-body">
@@ -60,14 +61,24 @@
           <article class="tile is-child notification is-success">
             <div class="content">
               <p class="title">Most recent posts</p>
-              <p class="subtitle">Insert creative subtitle</p>
+              
               <div class="content">
                 <ul>
                 {{#each post}}
                   <li>
-                    <p>{{this.title}}</p>
+                    <p><a href="/postview/{{this.id}}">{{this.title}}</a></p>
                   </li>
                 {{/each}}
+                </ul>
+              </div>
+              <p class="title">Most recent comments</p>
+              <div>
+                <ul>
+                  {{#each comment}}
+                    <li>
+                      <p><a href="/postview/{{this.PostId}}">{{this.title}}</a></p>
+                    </li>
+                  {{/each}}
                 </ul>
               </div>
             </div>
