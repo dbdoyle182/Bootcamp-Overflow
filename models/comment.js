@@ -7,7 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4
     },
-    content: DataTypes.TEXT
+    content: DataTypes.TEXT,
+    title: DataTypes.STRING,
+    createdBy: DataTypes.STRING,
+    createdByImg: DataTypes.STRING
   }, {
     freezeTableName: true
   });
