@@ -43,6 +43,19 @@ var db = require('../models');
         res.redirect('/user')
     });
 
+    router.put("/api/users", function(req, res) {
+        db.User.update(
+          req.body,
+          {
+            where: {
+              id: req.user.id
+            }
+          }).then(function(results) {
+              console.log("User page should render here")
+            res.end();
+        });
+      });
+
     router.get('/logout', function(req, res) {
         req.logout();
         req.session.destroy();

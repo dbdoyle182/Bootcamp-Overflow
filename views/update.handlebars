@@ -1,0 +1,59 @@
+ {{> navbar }}
+ <div class="container">
+    <form>
+        <div class="field">
+            <label class="label">Avatar</label>
+            <div class="control">
+                <input class="input" type="url" placeholder="Place image url here" name='userImage' id="image">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Bio</label>
+            <div class="control">
+                <textarea name="bio" placeholder="Tell us about yourself." id="bio"></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Career Aspirations</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Where are you located?  What are you looking for?" name='career' id="career">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Experience and Education</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Experience & Education" name='resume' id="resume">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Areas of Proficiency</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="What technologies are you most comfortable with?" name='desiredLearning' id="proficiency">
+            </div>
+        </div>
+        <div>
+            <button id="updatebutton" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+    <script>
+        $('#updatebutton').on('click', function(event) {
+            event.preventDefault();
+            var user = {
+                userImage: $('#image').val().trim(),
+                bio: $('#bio').val().trim(),
+                career: $('#career').val().trim(),
+                resume: $('#resume').val().trim(),
+                desiredLearning: $('#proficiency').val().trim()
+            }
+            console.log('button is working')
+            $.ajax({
+                method: "PUT",
+                url: "/api/users",
+                data: user
+                }).then(function(data) {
+                    window.location.replace('/user')
+                });
+            
+        });
+    </script>
