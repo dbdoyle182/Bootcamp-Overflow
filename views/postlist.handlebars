@@ -1,11 +1,24 @@
 
 {{> navbar }}
-<ul>
+
+<div class="container">
     {{#each post}}
-        <li>
-            <a href="/postview/{{this.id}}")>{{this.title}}</a>
-            <p>{{this.posttype}}</p>
-            <p>Author: {{this.User.username}}</p>
-        </li>
+    <article class="media">
+    <figure class="media-left">
+        <p class="image is-64x64">
+        <img src="{{this.User.userImage}}">
+        </p>
+    </figure>
+    <div class="media-content">
+        <div class="content">
+        <p>
+            <strong>{{this.User.username}}</strong> <small>{{this.posttype}}</small> 
+            <br>
+            <a href="/postview/{{this.id}}">{{this.title}}</a>
+        </p>
+        </div>
+    </div>
+    </article>
+    <hr>
     {{/each}}
-</ul>
+</div>
