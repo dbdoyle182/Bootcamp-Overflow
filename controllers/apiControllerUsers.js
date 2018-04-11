@@ -22,7 +22,12 @@ var db = require('../models');
                 password: req.body.password,
                 username: req.body.username,
                 firstName: req.body.first,
-                lastName: req.body.last
+                lastName: req.body.last,
+                userImage: req.body.userImage,
+                bio: req.body.bio,
+                career: req.body.career,
+                resume: req.body.resume,
+                desiredLearning: req.body.desiredLearning
                 
         }).then(function(results) {
             check('email').isEmail().withMessage('Must be a valid email').trim().normalizeEmail();
