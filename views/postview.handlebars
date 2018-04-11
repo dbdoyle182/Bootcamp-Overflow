@@ -6,7 +6,7 @@
     <article class="media">
         <figure class="media-left">
             <p class="image is-64x64">
-                <img src="{{postinfo.User.userImage}}">
+                <a href="/user/{{postinfo.User.username}}"><img src="{{postinfo.User.userImage}}"></a>
             </p>
         </figure>
         <div class="media-content">
@@ -25,7 +25,7 @@
                 <article class="media">
                     <figure class="media-left">
                         <p class="image is-48x48">
-                            <img src="{{this.createdByImg}}">
+                            <a href="/user/{{this.createdBy}}"><img src="{{this.createdByImg}}"></a>
                         </p>
                     </figure>
                     <div class="media-content">
@@ -73,19 +73,33 @@
                     </div>
                 </div>
             </div>
-            <div class="field">
-                <p class="control">
-                    <button class="button">Post comment</button>
-                </p>
+            <div class="field is-grouped">
+                <div class="field">
+                    <p class="control">
+                        <button class="button">Post comment</button>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button type="reset" class="button">Cancel</button>
+                    </p>
+                </div>
             </div>
         </form>
     </div>
     {{else}}
-    <div class="container">
-        <div>
-            <a href="/login">Log in</a> to participate in the conversation!
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Sorry comments are only available to members.
+            </h1>
+            <h2 class="subtitle">
+              You must <a href="/login">log in</a> or <a href="/signup">sign up</a> to access
+            </h2>
+          </div>
         </div>
-    </div>
+      </section>
     </article>
     {{/if}}
 </div>

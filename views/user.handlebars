@@ -2,7 +2,9 @@
 
       {{> navbar}}
 
-        
+    {{#if isLoggedIn}}
+      {{#if guest}}
+      {{else}}
         <section class="hero is-primary">
           <div class="hero-body">
             <span>
@@ -18,6 +20,7 @@
             </span>
           </div>
         </section>
+        {{/if}}
 <br>
 
     <div class="tile is-ancestor">
@@ -85,4 +88,18 @@
           </article>
         </div>
       </div>
+      {{else}}
+      <section class="hero is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Sorry user pages are only available to members.
+            </h1>
+            <h2 class="subtitle">
+              You must <a href="/login">log in</a> or <a href="/signup">sign up</a> to access
+            </h2>
+          </div>
+        </div>
+      </section>
+      {{/if}}
 
