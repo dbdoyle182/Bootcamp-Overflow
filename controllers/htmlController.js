@@ -62,6 +62,10 @@ if(req.user) {
 
 router.get('/post', function(req, res) {
     res.render('post', {user: req.user})
-})
+});
+
+router.get('/update', function(req, res) {
+    res.render('update', {user: req.user})
+});
 
 module.exports = router
