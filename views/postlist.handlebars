@@ -2,6 +2,34 @@
 {{> navbar }}
 
 <div class="container">
+    <div class="section">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Welcome to the post page{{#if user}} {{user.username}}!{{else}}!{{/if}}
+                    </h1>
+                    <h2 class="subtitle">
+                        Select a filter below if you would like.
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <div class="columns">
+            <div class="column">
+                <a href="/postlist" class="button">All Posts</a>
+            </div>
+            <div class="column">
+                <a href="/postlist/code snippet" class="button">Code Snippets</a>
+            </div>
+            <div class="column">
+                <a href="/postlist/observation"class="button">Observations</a>
+            </div>
+            <div class="column">
+                <a href="/postlist/question" class="button">Questions</a>
+            </div>
+        </div>
+    </div>
     {{#each post}}
     <article class="media">
     <figure class="media-left">

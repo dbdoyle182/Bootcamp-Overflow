@@ -35,9 +35,20 @@ router.get('/postlist', function(req, res) {
         }
     ).then(function(results) {
 
-        res.render('postlist', { post: results })
+        res.render('postlist', { post: results , user: req.user})
     });
 });
+
+router.get('/postlist/:posttype', function(req, res) {
+    db.Post.findAll({
+        where: {
+            posttype: req.params.posttype
+        },
+        include: [{all:true}]
+    }).then(function(results) {
+        res.render('postlist', {post: results, user: req.user})
+    })
+})
 
 router.get('/signup', function(req, res) {
 
@@ -46,18 +57,18 @@ router.get('/signup', function(req, res) {
 });
 
 router.get('/user', function(req, res) {
-if(req.user) {
-    db.User.findOne({
-        where: {
-            id: req.user.id
-        },
-        include: [{all:true}]
-    }).then(function(data) {
-        console.log(data.userImage);
-        
-        res.render('user', { user: data, post: data.Posts, comment: data.Comments })
-    })
-}
+    if(req.user) {
+        db.User.findOne({
+            where: {
+                id: req.user.id
+            },
+            include: [{all:true}]
+        }).then(function(data) {
+            console.log(data.userImage);
+            
+            res.render('user', { user: data, post: data.Posts, comment: data.Comments })
+        })
+    }
 });
 
 router.get('/post', function(req, res) {
@@ -67,5 +78,20 @@ router.get('/post', function(req, res) {
 router.get('/update', function(req, res) {
     res.render('update', {user: req.user})
 });
+
+router.get('/user/:username', function(req, res) {
+    if(req.user) {
+        db.User.findOne({
+            where: {
+                username: req.params.username
+            },
+            include: [{all:true}]
+        }).then(function(results) {
+            console.log(results)
+            res.render('user', {user: results, post: results.Posts, comment: results.Comments})
+        });
+    }
+})
+
 
 module.exports = router
