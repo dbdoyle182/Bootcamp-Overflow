@@ -37,6 +37,12 @@ var db = require('../models');
         res.redirect('/user')
     });
 
+    router.get('/logout', function(req, res) {
+        req.logout();
+        req.session.destroy();
+        res.redirect('/');
+    })
+
 
 
 
