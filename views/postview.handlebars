@@ -1,13 +1,30 @@
-<h1>Title: {{postinfo.title}}</h1>
-<h4>Author: {{postinfo.User.username}}</h4>
-<h4>Post Type: {{postinfo.posttype}}</h4>
-<p>{{postinfo.content}}</p>
-
+<section class="section">  
+    <div class="container"> 
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <span>
+                        <h4>Author: {{postinfo.User.username}}</h4>
+                        <img src="{{postinfo.User.userImage}}" alt="User Image">
+                    </span>
+                </div>
+            </div>
+            <div class="level-item">
+                <span>
+                    <h1>Title: {{postinfo.title}}</h1>
+                    <h4>Post Type: {{postinfo.posttype}}</h4>
+                    <p>{{postinfo.content}}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
 <h1>COMMENTS</h1>
 <ul>
     {{#each postinfo.Comments}}
         <li>
-            <p>User: {{this.createdBy}}</p>
+            <p>{{this.createdBy}}</p>
+            <img src="{{this.createdByImg}}" alt="Comment User Image">
             <p>{{this.content}}</p>
         </li>
     {{/each}}

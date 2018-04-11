@@ -28,6 +28,7 @@ router.get('/postview/:id', function(req, res) {
             include: [{all:true}]
         }
     ).then(function(results) {
+        console.log(results.User)
         res.render('postview', {
             postinfo: results,
             user: req.user

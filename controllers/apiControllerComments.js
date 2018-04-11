@@ -21,7 +21,9 @@ router.post('/api/comments', function(req, res) {
             UserId: req.user.id,
             content: req.body.content,
             title: req.body.title,
-            PostId: req.body.postid
+            createdBy: req.user.username,
+            PostId: req.body.postid,
+            createdByImg: req.user.userImage
         }
     ).then(function(results) {
     

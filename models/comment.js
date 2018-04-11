@@ -9,6 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     content: DataTypes.TEXT,
     title: DataTypes.STRING,
+    createdBy: DataTypes.STRING,
+    createdByImg: DataTypes.STRING
   }, {
     freezeTableName: true
   });
