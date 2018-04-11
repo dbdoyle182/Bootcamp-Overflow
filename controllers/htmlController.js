@@ -3,19 +3,11 @@ var express = require('express');
 var router = express.Router();
 var db = require('../models')
 
-
 router.get('/', function(req, res) {
-    if (req.user) {
-        console.log(req.user);
-    }
-        console.log(req.isAuthenticated());
-
-    res.render('home')
+    res.render('home');
 });
 
 router.get('/login', function(req, res) {
-
-
     res.render('login')
 });
 
