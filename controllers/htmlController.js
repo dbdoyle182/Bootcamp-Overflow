@@ -1,4 +1,5 @@
 var express = require('express');
+var flash = require('connect-flash');
 
 var router = express.Router();
 var db = require('../models')
@@ -8,7 +9,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-    res.render('login')
+    res.render('login', {message: req.flash('error')});
 });
 
 router.get('/postview/:id', function(req, res) {
