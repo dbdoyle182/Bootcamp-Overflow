@@ -2,55 +2,47 @@
 
 <section class="hero-is-primary is-medium">
   <div class="hero-body is-primary">
-    <div class="container">
+    <div class="container is-primary">
+      <form action='/api/posts' method="POST">
+        <div class="field">
+          <label class="label has-text-white">Posting as {{user.username}}</label>
+        </div>
+        <div class="field">
+          <label class="label has-text-white">Post type</label>
+          <div class="control">
+            <div class="select">
+              <select name='posttype'>
+                <option>Question</option>
+                <option>Observation</option>
+                <option>Code snippet</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="title" class="label has-text-white">Title</label>
+          <div class="control">
+            <input class='input' type="text" placeholder="Post Title" name='title'>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label has-text-white">Post Content</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Type your post here" rows="10" name='content'></textarea>
+          </div>
+        </div>
 
 
-<form action='/api/posts' method="POST">
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-link" type="reset">Cancel</button>
+          </div>
+        </div>
 
-
-{{!-- this section to display the logged in username. Need to figure out how to pull from the db--}}
-<div class="field">
-  <label class="label">Posting as {{user.username}}</label>
-</div>
-
-
-<div class="field">
-  <label class="label">Post type</label>
-  <div class="control">
-    <div class="select">
-      <select name='posttype'>
-        <option>Question</option>
-        <option>Observation</option>
-        <option>Code snippet</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-<div class="field">
-  <label for="title" class="label">Title</label>
-  <div class="control">
-    <input class='input' type="text" placeholder="Post Title" name='title'>
-  </div>
-</div>
-<div class="field">
-  <label class="label">Post Content</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Type your post here" rows="10" name='content'></textarea>
-  </div>
-</div>
-
-
-<div class="field is-grouped">
-  <div class="control">
-    <button class="button is-link" type="submit">Submit</button>
-  </div>
-  <div class="control">
-    <button class="button is-text" type="reset">Cancel</button>
-  </div>
-</div>
-
-</form>
+      </form>
 
     </div>
   </div>

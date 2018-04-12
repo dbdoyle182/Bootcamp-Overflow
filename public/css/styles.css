@@ -17,3 +17,16 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+section.hero-is-primary {
+  background-color: rgb(0,209,178)
+}
+
+.postlist {
+  background-color: lavender;
+  padding: 40px 20px 20px;
+}
+
+section.hero.is-primary {
+  margin-bottom: 20px;
+}
