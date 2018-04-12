@@ -3,42 +3,7 @@
 <section class="hero is-primary is-medium">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="assets/images/logo.PNG" alt="Logo">
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          
-        </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href='/postlist'>
-              Posts
-            </a>
-            <a class="navbar-item" href='/login'>
-              Login
-            </a>
-            <a class="navbar-item" href="/signup">
-              Register
-            </a>
-            <span class="navbar-item">
-              <a class="button is-primary is-inverted" href="https://github.com/dbdoyle182/Bootcamp-Overflow">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                {{!-- <span>stuff</span> --}}
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </nav>
+      {{> navbar }}
   </div>
 
   <!-- Hero content: will be in the middle -->
