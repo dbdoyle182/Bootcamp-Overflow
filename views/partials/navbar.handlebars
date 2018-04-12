@@ -1,62 +1,18 @@
 
   <div class="hero-head">
     
-     <nav class="navbar">
+    <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item">
-            <img src="assets/images/logo.PNG" alt="Logo">
+            <img src="/assets/images/logo.PNG" alt="Logo">
           </a>
-    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-</a>
-
+          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-       
-       {{!-- <div class="navbar-dropdown">
-            <span>
-            <a class="navbar-item" href='/postlist'>
-              Posts
-            </a>
-            </span>
-            {{#if isLoggedIn}}
-              <span>
-              <a class="navbar-item" href='/post'>
-                Create a Post
-              </a>
-              </span>
-              <span>
-              <a class="navbar-item" href="/logout">
-                Logout
-              </a>
-              </span>
-              <span>
-              <a class="navbar-item" href="/user">
-              {{#if guest}}
-                {{guest.username}}'s page
-              {{else}}
-                {{user.username}}'s page
-              {{/if}}
-              </a>
-              </span>
-
-            {{else}}
-              <span>
-              <a class="navbar-item" href="/login">
-                Login
-              </a>
-              </span>
-              <span>
-              <a class="navbar-item" href="/signup">
-                Register
-              </a>
-              </span>
-            {{/if}}
-
-
-       </div> --}}
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item" href='/postlist'>
