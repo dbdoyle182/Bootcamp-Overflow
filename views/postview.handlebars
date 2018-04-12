@@ -1,8 +1,16 @@
 
 {{> navbar }}
 
-
-<div class="container">
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{postinfo.title}}
+      </h1>
+    </div>
+  </div>
+</section>
+<div class="container postlist">
     <article class="media">
         <figure class="media-left">
             <p class="image is-64x64">
@@ -13,8 +21,6 @@
             <div class="content">
                 <p>
                     <strong>{{postinfo.User.username}}</strong>
-                    <br>
-                    {{postinfo.title}}
                     <br>
                     {{postinfo.content}}
                     <br>
@@ -90,7 +96,7 @@
     {{else}}
     <section class="hero is-primary is-bold">
         <div class="hero-body">
-          <div class="container">
+          <div>
             <h1 class="title">
               Sorry comments are only available to members.
             </h1>
