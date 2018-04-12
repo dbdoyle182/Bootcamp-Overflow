@@ -32,7 +32,7 @@ router.get('/postview/:id', function(req, res) {
 router.get('/postlist', function(req, res) {
     db.Post.findAll(
         {
-            include: [db.User]
+            include: [{all:true}]
         }
     ).then(function(results) {
 

@@ -26,7 +26,7 @@ router.post('/api/comments', function(req, res) {
             createdByImg: req.user.userImage
         }
     ).then(function(results) {
-    
+        console.log(req.body.content)
         res.redirect('/postview/' + req.body.postid + '/')
     });
 })

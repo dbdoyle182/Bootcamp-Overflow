@@ -40,12 +40,17 @@
         <div class="media-content">
             <div class="content">
             <p class="has-text-black">
-                <strong>{{this.User.username}}</strong> <small>{{this.posttype}}</small> 
+                <strong>{{this.User.username}}</strong> <small>{{this.posttype}}</small> <small>{{this.createdAt}}</small> 
                 <br>
                 <a href="/postview/{{this.id}}" class="is-link">{{this.title}}</a>
             </p>
             </div>
         </div>
+        <figure class="media-right">
+            <p>
+                <strong>Comments:</strong> {{length this.Comments}}
+            </p>
+        </figure>
         </article>
         <hr>
         {{/each}}
