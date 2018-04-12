@@ -19,9 +19,7 @@ var db = require('./models');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Sets up the static directory
 
-app.use(express.static('public'));
 
 //Authentication
 app.use(session({
@@ -62,6 +60,10 @@ var exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+
+// Sets up the static directory
+
+app.use(express.static('public'));
 
 // Import router
 
