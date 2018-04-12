@@ -18,6 +18,11 @@
 <form action="/login" method="POST">
   <div class="field">
     <p class="control has-icons-left has-icons-right">
+      {{#if message}}
+        <div class="notification is-danger">
+          <p>{{message}}</p>
+        </div>
+      {{/if}}
       <input class="input" type="text" placeholder="Username" name='username'>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
@@ -43,7 +48,7 @@
     </p>
   </div>
 </form>
-
+  
     </div>
   </div>
 

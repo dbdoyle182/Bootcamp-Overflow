@@ -18,8 +18,8 @@ module.exports = function(passport) {
         console.log('-----------------');
         console.log('session------' + JSON.stringify(req.user));
         console.log('-----------------');
-        if (!user) { return done(null, false); }
-        if (user.password != password) { return done(null, false); }
+        if (!user) { return done(null, false, { message: 'Incorrect username.' }); }
+        if (user.password != password) { return done(null, false, {message: 'Password does not match'}); }
         return done(null, user);
         
       });

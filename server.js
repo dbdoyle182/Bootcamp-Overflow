@@ -2,6 +2,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');
 
 // Authentication packages
 var session = require('express-session');
@@ -23,13 +24,14 @@ app.use(bodyParser.json());
 
 //Authentication
 app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false }
-  }));
-  app.use(passport.initialize());
-  app.use(passport.session());
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

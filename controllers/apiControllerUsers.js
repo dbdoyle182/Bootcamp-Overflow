@@ -38,9 +38,9 @@ var db = require('../models');
         })
     })
 
-    router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }),
+    router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
     function(req, res) {
-        res.redirect('/user')
+        res.redirect('/user');
     });
 
     router.put("/api/users", function(req, res) {
