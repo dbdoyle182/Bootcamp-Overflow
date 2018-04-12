@@ -1,38 +1,43 @@
  {{> navbar }}
- <div class="container">
-    <form>
+ <div class="container updateform">
+    <form class="formupdate">
         <div class="field">
-            <label class="label">Avatar</label>
+            <label class="label has-text-white">Avatar</label>
             <div class="control">
                 <input class="input" type="url" placeholder="Place image url here" name='userImage' id="image">
             </div>
         </div>
         <div class="field">
-            <label class="label">Bio</label>
+            <label class="label has-text-white">Bio</label>
             <div class="control">
-                <textarea name="bio" placeholder="Tell us about yourself." id="bio"></textarea>
+                <textarea name="bio" placeholder="Tell us about yourself." id="bio" class="textarea" rows="10"></textarea>
             </div>
         </div>
         <div class="field">
-            <label class="label">Career Aspirations</label>
+            <label class="label has-text-white">Career Aspirations</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Where are you located?  What are you looking for?" name='career' id="career">
+                <textarea rows="5" class="textarea" type="text" placeholder="Where are you located?  What are you looking for?" name='career' id="career"></textarea>
             </div>
         </div>
         <div class="field">
-            <label class="label">Experience and Education</label>
+            <label class="label has-text-white">Experience and Education</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Experience & Education" name='resume' id="resume">
+                <textarea rows="5" class="textarea" type="text" placeholder="Experience & Education" name='resume' id="resume"></textarea>
             </div>
         </div>
         <div class="field">
-            <label class="label">Areas of Proficiency</label>
+            <label class="label has-text-white">Areas of Proficiency</label>
             <div class="control">
                 <input class="input" type="text" placeholder="What technologies are you most comfortable with?" name='desiredLearning' id="proficiency">
             </div>
         </div>
-        <div>
-            <button id="updatebutton" type="submit">Submit</button>
+        <div class="field is-grouped">
+            <div class="control">
+                <button id="updatebutton" class="button is-link" type="submit">Submit</button>
+            </div>
+            <div class="control">
+                <button class="button is-link" type="reset">Cancel</button>
+            </div>
         </div>
     </form>
 </div>

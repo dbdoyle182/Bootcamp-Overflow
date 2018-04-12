@@ -18,7 +18,8 @@ footer {
   width: 100%;
 }
 
-section.hero-is-primary {
+section.hero-is-primary,
+.updateform {
   background-color: rgb(0,209,178)
 }
 
@@ -29,4 +30,8 @@ section.hero-is-primary {
 
 section.hero.is-primary {
   margin-bottom: 20px;
+}
+
+.formupdate {
+  padding: 20px
 }
