@@ -44,8 +44,44 @@ var db = require('../models');
     });
 
     router.put("/api/users", function(req, res) {
+        var newImage;
+        var newBio;
+        var newResume;
+        var newCareer;
+        var newDesiredLearning;
+        if(req.body.userImage === '') {
+            newImage = req.user.userImage
+        } else {
+            newImage = req.body.userImage
+        };
+        if(req.body.bio === '') {
+            newBio = req.user.bio
+        } else {
+            newBio = req.body.bio
+        };
+        if(req.body.resume === '') {
+            newResume = req.user.resume
+        } else {
+            newResume = req.body.resume
+        };
+        if(req.body.career === '') {
+            newCareer = req.user.career
+        } else {
+            newCareer = req.body.career
+        };
+        if(req.body.desiredLearning === '') {
+            newDesiredLearning = req.user.desiredLearning
+        } else {
+            newDesiredLearning = req.body.desiredLearning
+        };
         db.User.update(
-          req.body,
+            {
+                userImage: newImage,
+                bio: newBio,
+                resume: newResume,
+                career: newCareer,
+                desiredLearning: newDesiredLearning
+            },
           {
             where: {
               id: req.user.id
