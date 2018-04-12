@@ -22,7 +22,7 @@
                 <p>
                     <strong>{{postinfo.User.username}}</strong>
                     <br>
-                    {{postinfo.content}}
+                    {{{lineBreak postinfo.content}}}
                     <br>
                 </p>
             </div>
@@ -36,12 +36,10 @@
                     </figure>
                     <div class="media-content">
                         <div class="content">
-                            <p>
                                 <strong>{{this.createdBy}}</strong>
                                 <br>
-                                {{this.content}}
+                                <p>{{{lineBreak this.content}}}</p>
                                 <br>
-                            </p>
                         </div>
                     </div>
                 </article>
@@ -109,3 +107,4 @@
     </article>
     {{/if}}
 </div>
+

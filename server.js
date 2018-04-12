@@ -57,9 +57,20 @@ app.use(function(req, res, next) {
 // Set up Handlebars
 
 var exphbs = require('express-handlebars');
-
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+var helpers = require('handlebars-helpers')();
+app.engine('handlebars', exphbs({ 
+  defaultLayout: 'main', 
+  helpers: {
+    lineBreak: function(post) {
+       return post.split('\r\n').join('<br>');
+    },
+    combo: function(post) {
+      return post.replace('/\s/g', "&nbsp");
+    }
+  }
+ }));
 app.set('view engine', 'handlebars');
+
 
 // Sets up the static directory
 
