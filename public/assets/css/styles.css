@@ -5,6 +5,7 @@ html {
 body {
   min-height: 100%;
   position: relative;
+  background-color: rgb(245,245,245);
 }
 
 .clearfix {
