@@ -17,7 +17,7 @@ Test Password: password
 1. If you prefer to change the localhost to a different port, the variable is located at the top of server.js
 1. Run npm start
 
-_Any questions email me [dbdoyle182@gmail.com](dbdoyle182@gmail.com)_
+_Any questions email me dbdoyle182@gmail.com_
 
 
 ### Prerequisites
