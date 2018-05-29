@@ -11,6 +11,13 @@ Test Password: password
 
 ## Getting Started
 
+1. Fork and copy or copy directly from this repository then git clone to your machine
+1. Run npm install 
+1. Using MySQL, run the schema.sql file contents in SQL to initialize the database
+1. If you prefer to change the localhost to a different port, the variable is located at the top of server.js
+1. Run npm start
+
+_Any questions email me [dbdoyle182@gmail.com](dbdoyle182@gmail.com)_
 
 
 ### Prerequisites
@@ -34,7 +41,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
- For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+ For the versions available, see the [tags on this repository](https://github.com/dbdoyle182/Bootcamp-Overflow/tags). 
 
 ## Authors
 
