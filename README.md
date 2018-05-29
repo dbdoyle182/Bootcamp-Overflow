@@ -37,9 +37,16 @@ _Any questions email me dbdoyle182@gmail.com_
 
 ## Built With
 
-* [Handlebars]() - 
-* [Bulma.io]() - 
-* [Express.js]() - 
+* [Handlebars](https://handlebarsjs.com/) - 
+* [Bulma.io](https://bulma.io/documentation/) - 
+* [Express.js](https://expressjs.com/) - 
+* [MySQL](https://dev.mysql.com/doc/?) -
+* [Sequelize](http://sequelize.readthedocs.io/en/v3/) -
+* [Passport](http://www.passportjs.org/) -
+* [Express-Handlebars](https://github.com/ericf/express-handlebars) -
+* [Express-Session](https://www.npmjs.com/package/express-session) -
+* [Express-Validator](https://www.npmjs.com/package/express-validator) -
+
 
 ## Versioning
 
