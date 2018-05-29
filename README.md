@@ -22,16 +22,18 @@ _Any questions email me dbdoyle182@gmail.com_
 
 ### Prerequisites
 
-
-### Installing
-
-
-
-
+* Having MySQL installed on your computer
+* Node.js installed globally
+* Heroku CLI installed globally
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+1. Initialize a github repository with your local folder 
+1. Git add, commit and push all changes to master
+1. Run heroku create
+1. Go to the heroku project page and install mLab under the add ons section (You will need to have a credit card on file, this does not cost any money however)
+1. Run git push heroku master
+1. Once it finishes deploying run heroku open
 
 ## Built With
 
